@@ -24,16 +24,18 @@ namespace weixin_uwp
         public static MainPage instance;
         StartUI startUI;
 
-        ObjectBase selectObjectBase = new ObjectBase(); //当前对话对象的UserName
+        /// <summary>
+        /// 当前对话对象的UserName
+        /// </summary>
+        ObjectBase selectObjectBase = new ObjectBase();
 
-        Dictionary<string, Conversation> dictUserInfo = new Dictionary<string, Conversation>();//用户信息
         Dictionary<string, List<ChatMessage>> dictChatList = new Dictionary<string, List<ChatMessage>>();//聊天信息
 
         ObservableCollection<Conversation> ocSessionInfo = new ObservableCollection<Conversation>();
         //SortedList<string, Conversation> listSession = new SortedList<string, Conversation>(); //会话列表
 
         ObservableCollection<Conversation> ocContactInfo = new ObservableCollection<Conversation>();
-        SortedList<string, Conversation> listContact = new SortedList<string, Conversation>(); //联系人列表
+        //SortedList<string, Conversation> listContact = new SortedList<string, Conversation>(); //联系人列表
         #endregion
 
         #region Init
@@ -163,10 +165,13 @@ namespace weixin_uwp
 
                 if (isFind == false) //如果会话列表没有找到，就去联系人列表去找
                 {
-                    //ObjectBase obj = startUI.memberList.Select( First(a => a.UserName == fromUserName);
-                    //await obj.GetHeadImage();
+                    //if (msg.isGroup)
+                    //{
+                    //    startUI.getGroupById(fromUserName);
+                    //}
                     Conversation conv = new Conversation();
                     conv.FromObj = msg.isGroup ? msg.To : msg.From;
+                    await conv.FromObj.GetHeadImage();//确保头像出来
                     conv.subHeading = msg.isGroup ? conv.FromObj.Name + ":" + msg.message : msg.message;
                     conv.unReadMsgCount = 1;
                     ocSessionInfo.Insert(0, conv);
@@ -342,6 +347,26 @@ namespace weixin_uwp
             ////获取返回值
             //var result = dialog.ShowAsync();
         }
+
+        ///// <summary>
+        ///// 用户在其他地方登录
+        ///// </summary>
+        ///// <returns></returns>
+        //public async Task OtherLogin()
+        //{
+        //    ContentDialog errDialog = new ContentDialog()
+        //    {
+        //        Title = "登录异常",
+        //        Content = "有用户在其他地方登录了该微信！",
+        //        PrimaryButtonText = "Ok"
+        //    };
+
+        //    ContentDialogResult result = await errDialog.ShowAsync();
+        //    if (result == ContentDialogResult.Primary)
+        //    {
+        //        this.Frame.Navigate(typeof(LoginPage));
+        //    }
+        //}
         #endregion
     }
 }

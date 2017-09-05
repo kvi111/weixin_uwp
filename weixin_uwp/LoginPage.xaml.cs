@@ -52,15 +52,19 @@ namespace weixin_uwp
         {
             await startUI.start();
         }
-        public async Task SetTip(string msg)
+        public async Task SetTip(string msg,bool isShowDialog = false)
         {
-            msg += "\n";
             await CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(
             CoreDispatcherPriority.High,
             new DispatchedHandler(() =>
             {
                 this.textTip.Text = msg;
             }));
+
+            if(isShowDialog)
+            {
+                await LoginErr(msg);
+            }
         }
 
         public async Task SetQRImage(Byte[] data)
@@ -82,6 +86,22 @@ namespace weixin_uwp
             {
                 this.Frame.Navigate(typeof(MainPage), startUI);//sessionList
             }));
+        }
+
+        public async Task LoginErr(string msg)
+        {
+            ContentDialog errDialog = new ContentDialog()
+            {
+                Title = "登录异常",
+                Content = msg,
+                PrimaryButtonText = "Ok"
+            };
+
+            ContentDialogResult result = await errDialog.ShowAsync();
+            if (result == ContentDialogResult.Primary)
+            {
+                this.Frame.Navigate(typeof(LoginPage));
+            }
         }
     }
 }

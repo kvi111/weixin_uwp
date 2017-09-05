@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace weixin_uwp.Common.model
 {
@@ -9,13 +10,13 @@ namespace weixin_uwp.Common.model
     {
         public Group()
         {
-            Members = new List<Contact>();
+            Members = new Dictionary<String, Contact>();
         }
 
         /// <summary>
         /// 群成员
         /// </summary>
-        public List<Contact> Members { get; set; }
+        public Dictionary<String, Contact> Members { get; set; }
 
         private string _headImageUrl = "";
         /// <summary>

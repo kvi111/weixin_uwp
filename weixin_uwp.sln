@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.8
+VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "weixin_uwp", "weixin_uwp\weixin_uwp.csproj", "{5FD4B3FE-ADFB-45EF-8A6F-CA7181CAC6DF}"
 EndProject
@@ -18,6 +18,8 @@ Global
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{5FD4B3FE-ADFB-45EF-8A6F-CA7181CAC6DF}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{5FD4B3FE-ADFB-45EF-8A6F-CA7181CAC6DF}.Debug|Any CPU.Build.0 = Debug|x86
+		{5FD4B3FE-ADFB-45EF-8A6F-CA7181CAC6DF}.Debug|Any CPU.Deploy.0 = Debug|x86
 		{5FD4B3FE-ADFB-45EF-8A6F-CA7181CAC6DF}.Debug|ARM.ActiveCfg = Debug|ARM
 		{5FD4B3FE-ADFB-45EF-8A6F-CA7181CAC6DF}.Debug|ARM.Build.0 = Debug|ARM
 		{5FD4B3FE-ADFB-45EF-8A6F-CA7181CAC6DF}.Debug|ARM.Deploy.0 = Debug|ARM

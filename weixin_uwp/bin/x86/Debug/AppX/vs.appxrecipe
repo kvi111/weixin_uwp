@@ -10,7 +10,7 @@
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>fbfe406e-f310-4b37-9510-d8de96c45065</PackageIdentityName>
     <PackageIdentityPublisher>CN=lwf</PackageIdentityPublisher>
-    <IntermediateOutputPath>D:\VSProjects\weixin_uwp\weixin_uwp\obj\x86\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\obj\x86\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType>
     </RemoteDeploymentType>
     <PackageRegistrationPath>
@@ -18,8 +18,8 @@
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
-    <LayoutDir>D:\VSProjects\weixin_uwp\weixin_uwp\bin\x86\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>FEC6D1423BF780F41D201A2D019E4BD015F213BE14142AD6F34682DDD29C2292</RegisteredManifestChecksum>
+    <LayoutDir>D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\bin\x86\Debug\AppX</LayoutDir>
+    <RegisteredManifestChecksum>1F4CAB85C47DE1BB40A89F2A48A78156F46AA91833F9E451590B84D915346FFF</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>fbfe406e-f310-4b37-9510-d8de96c45065_1.0.0.0_x86__nx4tv894p4xnp</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>fbfe406e-f310-4b37-9510-d8de96c45065_nx4tv894p4xnp!App</RegisteredUserModeAppID>
     <RegisteredPackageID>fbfe406e-f310-4b37-9510-d8de96c45065</RegisteredPackageID>
@@ -28,16 +28,16 @@
     <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="D:\VSProjects\weixin_uwp\weixin_uwp\bin\x86\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-09-04T12:29:12.526</Modified>
+      <Modified>2017-09-05T09:04:41.333</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\bin\x86\Debug\weixin_uwp.exe">
+    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\bin\x86\Debug\weixin_uwp.exe">
       <PackagePath>entrypoint\weixin_uwp.exe</PackagePath>
-      <Modified>2017-09-04T12:29:11.096</Modified>
+      <Modified>2017-09-05T09:04:40.466</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\lwf\.nuget\packages\Microsoft.CSharp\4.3.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -519,274 +519,274 @@
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
       <Modified>2016-06-11T15:15:04.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\Assets\pc\Chat_Expression_Icon.scale-200.png">
+    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\Assets\pc\Chat_Expression_Icon.scale-200.png">
       <PackagePath>Assets\pc\Chat_Expression_Icon.scale-200.png</PackagePath>
-      <Modified>2017-09-03T15:53:43.542</Modified>
+      <Modified>2017-09-05T05:58:16.128</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\Assets\pc\Chat_Expression_Icon_Click.scale-200.png">
+    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\Assets\pc\Chat_Expression_Icon_Click.scale-200.png">
       <PackagePath>Assets\pc\Chat_Expression_Icon_Click.scale-200.png</PackagePath>
-      <Modified>2017-09-03T15:53:43.546</Modified>
+      <Modified>2017-09-05T05:58:16.128</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\Assets\pc\Chat_SendFile_Icon.scale-200.png">
+    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\Assets\pc\Chat_SendFile_Icon.scale-200.png">
       <PackagePath>Assets\pc\Chat_SendFile_Icon.scale-200.png</PackagePath>
-      <Modified>2017-09-03T15:53:43.549</Modified>
+      <Modified>2017-09-05T05:58:16.129</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\Assets\pc\Chat_SendFile_Icon_Click.scale-200.png">
+    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\Assets\pc\Chat_SendFile_Icon_Click.scale-200.png">
       <PackagePath>Assets\pc\Chat_SendFile_Icon_Click.scale-200.png</PackagePath>
-      <Modified>2017-09-03T15:53:43.553</Modified>
+      <Modified>2017-09-05T05:58:16.130</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\Assets\img\TabBar_Chat_Btn.scale-200.png">
+    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\Assets\img\TabBar_Chat_Btn.scale-200.png">
       <PackagePath>Assets\img\TabBar_Chat_Btn.scale-200.png</PackagePath>
-      <Modified>2017-08-05T04:37:50.464</Modified>
+      <Modified>2017-09-05T05:58:16.123</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\Assets\img\TabBar_Chat_Btn_Click.scale-200.png">
+    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\Assets\img\TabBar_Chat_Btn_Click.scale-200.png">
       <PackagePath>Assets\img\TabBar_Chat_Btn_Click.scale-200.png</PackagePath>
-      <Modified>2017-08-05T04:37:50.464</Modified>
+      <Modified>2017-09-05T05:58:16.124</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\Assets\img\TabBar_Chat_Btn_Hover.scale-200.png">
+    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\Assets\img\TabBar_Chat_Btn_Hover.scale-200.png">
       <PackagePath>Assets\img\TabBar_Chat_Btn_Hover.scale-200.png</PackagePath>
-      <Modified>2017-08-05T04:37:50.464</Modified>
+      <Modified>2017-09-05T05:58:16.125</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\Assets\img\TabBar_Contacts_Btn.scale-200.png">
+    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\Assets\img\TabBar_Contacts_Btn.scale-200.png">
       <PackagePath>Assets\img\TabBar_Contacts_Btn.scale-200.png</PackagePath>
-      <Modified>2017-08-05T04:37:50.464</Modified>
+      <Modified>2017-09-05T05:58:16.125</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\Assets\img\TabBar_Contacts_Btn_Click.scale-200.png">
+    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\Assets\img\TabBar_Contacts_Btn_Click.scale-200.png">
       <PackagePath>Assets\img\TabBar_Contacts_Btn_Click.scale-200.png</PackagePath>
-      <Modified>2017-08-05T04:37:50.465</Modified>
+      <Modified>2017-09-05T05:58:16.126</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\Assets\img\TabBar_Contacts_Btn_Hover.scale-200.png">
+    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\Assets\img\TabBar_Contacts_Btn_Hover.scale-200.png">
       <PackagePath>Assets\img\TabBar_Contacts_Btn_Hover.scale-200.png</PackagePath>
-      <Modified>2017-08-05T04:37:50.465</Modified>
+      <Modified>2017-09-05T05:58:16.126</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\Assets\LargeTile.scale-100.png">
+    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\Assets\LargeTile.scale-100.png">
       <PackagePath>Assets\LargeTile.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-08-05T14:30:34.374</Modified>
+      <Modified>2017-09-05T05:58:16.099</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\Assets\LargeTile.scale-125.png">
+    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\Assets\LargeTile.scale-125.png">
       <PackagePath>Assets\LargeTile.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-08-05T14:30:34.382</Modified>
+      <Modified>2017-09-05T05:58:16.100</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\Assets\LargeTile.scale-150.png">
+    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\Assets\LargeTile.scale-150.png">
       <PackagePath>Assets\LargeTile.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-08-05T14:30:34.394</Modified>
+      <Modified>2017-09-05T05:58:16.100</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\Assets\LargeTile.scale-200.png">
+    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\Assets\LargeTile.scale-200.png">
       <PackagePath>Assets\LargeTile.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-08-05T14:30:34.407</Modified>
+      <Modified>2017-09-05T05:58:16.101</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\Assets\LargeTile.scale-400.png">
+    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\Assets\LargeTile.scale-400.png">
       <PackagePath>Assets\LargeTile.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-08-05T14:30:34.439</Modified>
+      <Modified>2017-09-05T05:58:16.103</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\Assets\logo-200.png">
+    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\Assets\logo-200.png">
       <PackagePath>Assets\logo-200.png</PackagePath>
-      <Modified>2017-08-05T04:37:50.521</Modified>
+      <Modified>2017-09-05T05:58:16.127</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\Assets\SmallTile.scale-100.png">
+    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\Assets\SmallTile.scale-100.png">
       <PackagePath>Assets\SmallTile.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-08-05T14:30:34.234</Modified>
+      <Modified>2017-09-05T05:58:16.104</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\Assets\SmallTile.scale-125.png">
+    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\Assets\SmallTile.scale-125.png">
       <PackagePath>Assets\SmallTile.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-08-05T14:30:34.243</Modified>
+      <Modified>2017-09-05T05:58:16.105</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\Assets\SmallTile.scale-150.png">
+    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\Assets\SmallTile.scale-150.png">
       <PackagePath>Assets\SmallTile.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-08-05T14:30:34.251</Modified>
+      <Modified>2017-09-05T05:58:16.106</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\Assets\SmallTile.scale-200.png">
+    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\Assets\SmallTile.scale-200.png">
       <PackagePath>Assets\SmallTile.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-08-05T14:30:34.259</Modified>
+      <Modified>2017-09-05T05:58:16.106</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\Assets\SmallTile.scale-400.png">
+    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\Assets\SmallTile.scale-400.png">
       <PackagePath>Assets\SmallTile.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-08-05T14:30:34.268</Modified>
+      <Modified>2017-09-05T05:58:16.107</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\Assets\Square150x150Logo.scale-100.png">
+    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\Assets\Square150x150Logo.scale-100.png">
       <PackagePath>Assets\Square150x150Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-08-05T14:30:34.275</Modified>
+      <Modified>2017-09-05T05:58:16.107</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\Assets\Square150x150Logo.scale-125.png">
+    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\Assets\Square150x150Logo.scale-125.png">
       <PackagePath>Assets\Square150x150Logo.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-08-05T14:30:34.282</Modified>
+      <Modified>2017-09-05T05:58:16.108</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\Assets\Square150x150Logo.scale-150.png">
+    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\Assets\Square150x150Logo.scale-150.png">
       <PackagePath>Assets\Square150x150Logo.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-08-05T14:30:34.291</Modified>
+      <Modified>2017-09-05T05:58:16.108</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-08-05T14:30:34.302</Modified>
+      <Modified>2017-09-05T05:58:16.109</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\Assets\Square150x150Logo.scale-400.png">
+    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\Assets\Square150x150Logo.scale-400.png">
       <PackagePath>Assets\Square150x150Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-08-05T14:30:34.315</Modified>
+      <Modified>2017-09-05T05:58:16.110</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\Assets\Square44x44Logo.altform-unplated_targetsize-16.png">
+    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\Assets\Square44x44Logo.altform-unplated_targetsize-16.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-16.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-08-05T14:30:34.526</Modified>
+      <Modified>2017-09-05T05:58:16.110</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\Assets\Square44x44Logo.altform-unplated_targetsize-24.png">
+    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\Assets\Square44x44Logo.altform-unplated_targetsize-24.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-24.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-08-05T14:30:34.536</Modified>
+      <Modified>2017-09-05T05:58:16.111</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\Assets\Square44x44Logo.altform-unplated_targetsize-256.png">
+    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\Assets\Square44x44Logo.altform-unplated_targetsize-256.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-256.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-08-05T14:30:34.571</Modified>
+      <Modified>2017-09-05T05:58:16.112</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\Assets\Square44x44Logo.altform-unplated_targetsize-32.png">
+    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\Assets\Square44x44Logo.altform-unplated_targetsize-32.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-32.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-08-05T14:30:34.546</Modified>
+      <Modified>2017-09-05T05:58:16.112</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\Assets\Square44x44Logo.altform-unplated_targetsize-48.png">
+    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\Assets\Square44x44Logo.altform-unplated_targetsize-48.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-48.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-08-05T14:30:34.556</Modified>
+      <Modified>2017-09-05T05:58:16.113</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\Assets\Square44x44Logo.scale-100.png">
+    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\Assets\Square44x44Logo.scale-100.png">
       <PackagePath>Assets\Square44x44Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-08-05T14:30:34.446</Modified>
+      <Modified>2017-09-05T05:58:16.113</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\Assets\Square44x44Logo.scale-125.png">
+    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\Assets\Square44x44Logo.scale-125.png">
       <PackagePath>Assets\Square44x44Logo.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-08-05T14:30:34.454</Modified>
+      <Modified>2017-09-05T05:58:16.113</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\Assets\Square44x44Logo.scale-150.png">
+    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\Assets\Square44x44Logo.scale-150.png">
       <PackagePath>Assets\Square44x44Logo.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-08-05T14:30:34.461</Modified>
+      <Modified>2017-09-05T05:58:16.114</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-08-05T14:30:34.468</Modified>
+      <Modified>2017-09-05T05:58:16.115</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\Assets\Square44x44Logo.scale-400.png">
+    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\Assets\Square44x44Logo.scale-400.png">
       <PackagePath>Assets\Square44x44Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-08-05T14:30:34.476</Modified>
+      <Modified>2017-09-05T05:58:16.115</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\Assets\Square44x44Logo.targetsize-16.png">
+    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\Assets\Square44x44Logo.targetsize-16.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-16.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-08-05T14:30:34.483</Modified>
+      <Modified>2017-09-05T05:58:16.116</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\Assets\Square44x44Logo.targetsize-24.png">
+    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\Assets\Square44x44Logo.targetsize-24.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-08-05T14:30:34.490</Modified>
+      <Modified>2017-09-05T05:58:16.116</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\Assets\Square44x44Logo.targetsize-256.png">
+    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\Assets\Square44x44Logo.targetsize-256.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-256.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-08-05T14:30:34.515</Modified>
+      <Modified>2017-09-05T05:58:16.117</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\Assets\Square44x44Logo.targetsize-32.png">
+    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\Assets\Square44x44Logo.targetsize-32.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-32.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-08-05T14:30:34.497</Modified>
+      <Modified>2017-09-05T05:58:16.117</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\Assets\Square44x44Logo.targetsize-48.png">
+    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\Assets\Square44x44Logo.targetsize-48.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-48.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-08-05T14:30:34.504</Modified>
+      <Modified>2017-09-05T05:58:16.118</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\Assets\weixin.scale-100.png">
+    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\Assets\weixin.scale-100.png">
       <PackagePath>Assets\weixin.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-08-05T14:30:34.585</Modified>
+      <Modified>2017-09-05T05:58:16.131</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\Assets\weixin.scale-125.png">
+    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\Assets\weixin.scale-125.png">
       <PackagePath>Assets\weixin.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-08-05T14:30:34.601</Modified>
+      <Modified>2017-09-05T05:58:16.132</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\Assets\weixin.scale-150.png">
+    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\Assets\weixin.scale-150.png">
       <PackagePath>Assets\weixin.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-08-05T14:30:34.615</Modified>
+      <Modified>2017-09-05T05:58:16.132</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\Assets\weixin.scale-200.png">
+    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\Assets\weixin.scale-200.png">
       <PackagePath>Assets\weixin.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-08-05T14:30:34.634</Modified>
+      <Modified>2017-09-05T05:58:16.133</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\Assets\weixin.scale-400.png">
+    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\Assets\weixin.scale-400.png">
       <PackagePath>Assets\weixin.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-08-05T14:30:34.681</Modified>
+      <Modified>2017-09-05T05:58:16.134</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\Assets\weixin256.png">
+    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\Assets\weixin256.png">
       <PackagePath>Assets\weixin256.png</PackagePath>
-      <Modified>2017-08-05T14:29:44.014</Modified>
+      <Modified>2017-09-05T05:58:16.134</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\Assets\Wide310x150Logo.scale-100.png">
+    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\Assets\Wide310x150Logo.scale-100.png">
       <PackagePath>Assets\Wide310x150Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-08-05T14:30:34.323</Modified>
+      <Modified>2017-09-05T05:58:16.118</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\Assets\Wide310x150Logo.scale-125.png">
+    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\Assets\Wide310x150Logo.scale-125.png">
       <PackagePath>Assets\Wide310x150Logo.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-08-05T14:30:34.331</Modified>
+      <Modified>2017-09-05T05:58:16.119</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\Assets\Wide310x150Logo.scale-150.png">
+    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\Assets\Wide310x150Logo.scale-150.png">
       <PackagePath>Assets\Wide310x150Logo.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-08-05T14:30:34.339</Modified>
+      <Modified>2017-09-05T05:58:16.120</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-08-05T14:30:34.349</Modified>
+      <Modified>2017-09-05T05:58:16.121</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\Assets\Wide310x150Logo.scale-400.png">
+    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\Assets\Wide310x150Logo.scale-400.png">
       <PackagePath>Assets\Wide310x150Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-08-05T14:30:34.365</Modified>
+      <Modified>2017-09-05T05:58:16.122</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\Properties\Default.rd.xml">
+    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
-      <Modified>2017-08-02T05:32:40.205</Modified>
+      <Modified>2017-09-05T05:58:16.160</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\bin\x86\Debug\weixin_uwp.xr.xml">
+    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\bin\x86\Debug\weixin_uwp.xr.xml">
       <PackagePath>weixin_uwp.xr.xml</PackagePath>
-      <Modified>2017-09-04T10:17:22.543</Modified>
+      <Modified>2017-09-05T05:58:17.351</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.15063.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
       <Modified>2017-08-20T09:23:34.397</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\bin\x86\Debug\resources.pri">
+    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-09-04T12:29:12.059</Modified>
+      <Modified>2017-09-05T09:04:41.088</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\bin\x86\Debug\Core\weixin_uwp.exe">
+    <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\bin\x86\Debug\Core\weixin_uwp.exe">
       <PackagePath>weixin_uwp.exe</PackagePath>
-      <Modified>2017-09-04T12:29:12.498</Modified>
+      <Modified>2017-09-05T09:04:41.324</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
@@ -819,27 +819,27 @@
     </ResolvedSDKReference>
     <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
       <Name>Microsoft.VCLibs.140.00.Debug</Name>
-      <Version>14.0.25506.0</Version>
+      <Version>14.0.25507.1</Version>
       <Architecture>ARM</Architecture>
-      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00.Debug, MinVersion = 14.0.25506.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00.Debug, MinVersion = 14.0.25507.1, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
       <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Debug\ARM\Microsoft.VCLibs.ARM.Debug.14.00.appx</AppxLocation>
       <MoreInfo>
       </MoreInfo>
     </ResolvedSDKReference>
     <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
       <Name>Microsoft.VCLibs.140.00.Debug</Name>
-      <Version>14.0.25506.0</Version>
+      <Version>14.0.25507.1</Version>
       <Architecture>x64</Architecture>
-      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00.Debug, MinVersion = 14.0.25506.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00.Debug, MinVersion = 14.0.25507.1, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
       <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Debug\x64\Microsoft.VCLibs.x64.Debug.14.00.appx</AppxLocation>
       <MoreInfo>
       </MoreInfo>
     </ResolvedSDKReference>
     <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
       <Name>Microsoft.VCLibs.140.00.Debug</Name>
-      <Version>14.0.25506.0</Version>
+      <Version>14.0.25507.1</Version>
       <Architecture>x86</Architecture>
-      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00.Debug, MinVersion = 14.0.25506.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00.Debug, MinVersion = 14.0.25507.1, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
       <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Debug\x86\Microsoft.VCLibs.x86.Debug.14.00.appx</AppxLocation>
       <MoreInfo>
       </MoreInfo>

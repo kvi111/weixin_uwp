@@ -1,1 +1,1 @@
-D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp.csproj;x86
+D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\weixin_uwp.csproj;x86

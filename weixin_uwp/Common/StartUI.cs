@@ -85,13 +85,13 @@ namespace weixin_uwp
 
             if (await GetUUID() == false) //获取uuid
             {
-                await LoginPage.instance.SetTip("获取uuid失败");
+                await LoginPage.instance.SetTip("获取uuid失败",true);
                 return;
             }
 
             if (await GenQrCode() == false) //获取二维码
             {
-                await LoginPage.instance.SetTip("获取二维码失败");
+                await LoginPage.instance.SetTip("获取二维码失败", true);
                 return;
             }
 
@@ -101,31 +101,31 @@ namespace weixin_uwp
 
             if (await Login() == false) //登录
             {
-                await LoginPage.instance.SetTip("登录失败");
+                await LoginPage.instance.SetTip("登录失败", true);
                 return;
             }
 
             if (await Webwxinit() == false) //初始化
             {
-                await LoginPage.instance.SetTip("初始化失败");
+                await LoginPage.instance.SetTip("初始化失败", true);
                 return;
             }
 
             if (await OpenStatusNotify() == false) //开启微信状态通知
             {
-                await LoginPage.instance.SetTip("开启微信状态通知失败");
+                await LoginPage.instance.SetTip("开启微信状态通知失败", true);
                 return;
             }
 
             if (await GetContact() == false) //获取联系人
             {
-                await LoginPage.instance.SetTip("获取联系人失败");
+                await LoginPage.instance.SetTip("获取联系人失败", true);
                 return;
             }
 
             if (await GetAllGroupInfo() == false) //获取群信息
             {
-                await LoginPage.instance.SetTip("获取群信息失败");
+                await LoginPage.instance.SetTip("获取群信息失败", true);
                 return;
             }
 

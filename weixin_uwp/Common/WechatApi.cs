@@ -70,7 +70,7 @@ namespace weixin_uwp
         public Dictionary<String, Group> groupList;
 
         // 群成员字典 {group_id:Dictionary<String, Contact>}
-        protected Dictionary<String, Dictionary<String, Contact>> groupMemeberList = new Dictionary<String, Dictionary<String, Contact>>();
+        //protected Dictionary<String, Dictionary<String, Contact>> groupMemeberList = new Dictionary<String, Dictionary<String, Contact>>();
 
         // 公众号／服务号
         protected List<ObjectBase> publicUsersList;
@@ -457,7 +457,7 @@ namespace weixin_uwp
             catch (Exception ex)
             {
                 WriteLog("webwxinit异常：{0}", ex.Message);
-                
+
             }
             return false;
         }
@@ -598,6 +598,14 @@ namespace weixin_uwp
             }
         }
 
+        public async Task<bool> Logout()
+        {
+            String url = conf["API_webwxlogout"] + "?redirect=1&type=1";
+
+            JObject response = await doPost(url,null);
+            return true;
+        }
+
         /// <summary>
         /// 获取所有微信群的相关信息
         /// 第一次请求得到最近一段时间内活跃的群组（但不知道腾讯是怎么定义这段时间的）
@@ -645,6 +653,8 @@ namespace weixin_uwp
                 foreach (JObject group in groupListDetail)
                 {
                     string groupId = ((JValue)group["UserName"]).Value.ToString();
+                    Group groupNew = GetObjectBase(group).ToGroup();
+
                     Dictionary<String, Contact> mengberList = new Dictionary<string, Contact>();
                     foreach (JObject member in (JArray)group["MemberList"])
                     {
@@ -652,9 +662,14 @@ namespace weixin_uwp
                         //mengberList.Add(memberId, new Contact() { Name = ((JValue)member["NickName"]).Value.ToString(), UserName = memberId, DisplayName = ((JValue)member["DisplayName"]).Value.ToString() });
                         mengberList.Add(memberId, GetObjectBase(member).ToContact());
                     }
-                    if (groupMemeberList.ContainsKey(groupId) == false)
+                    if (groupList.ContainsKey(groupId) == false)
                     {
-                        groupMemeberList.Add(groupId, mengberList);
+                        groupNew.Members = mengberList;
+                        groupList.Add(groupId, groupNew);
+                    }
+                    else
+                    {
+                        groupList[groupId].Members = mengberList;
                     }
                 }
                 return true;
@@ -970,7 +985,7 @@ namespace weixin_uwp
 
             return await doPost(url);
         }
-        
+
         #endregion
 
         public async void sendText(String msg, String uid)
@@ -1002,51 +1017,37 @@ namespace weixin_uwp
             }
             return response;
         }
-        /**
-         * 根据群id查询群信息
-         *
-         * @param groupId
-         * @return
-         */
+
+        /// <summary>
+        /// 根据群id查询群信息
+        /// </summary>
+        /// <param name="groupId"></param>
+        /// <returns></returns>
         public Group getGroupById(String groupId)
         {
             String unknownGroup = Const.LOG_MSG_UNKNOWN_GROUP_NAME + groupId;
             Group group = new Group();
             group.UserName = groupId;
             group.Name = "";
-            //group.Add("DisplayName", "");
-            //group.Add("ShowName", "");
-            //group.Add("OwnerUin", "");
-            //group.Add("MemberCount", "");
 
             if (groupList.ContainsKey(groupId))
             {
                 return groupList[groupId];
             }
-            return group;
-
-            //foreach (Group element in groupList)
+            //else
             //{
-            //    //JsonObject member = element.getAsJsonObject();
-            //    if (element.UserName == groupId)
-            //    {
-            //        group["NickName"] = ((JValue)element["NickName"]) == null ? "" : ((JValue)element["NickName"]).Value.ToString();// Utils.emptyOr(((JValue)element["NickName"]).Value.ToString(), "");
-            //        group["DisplayName"] = ((JValue)element["DisplayName"]) == null ? "" : ((JValue)element["DisplayName"]).Value.ToString(); //Utils.emptyOr(((JValue)element["DisplayName"]).Value.ToString(), "");
-            //        group["ShowName"] = ((JValue)element["ShowName"]) == null ? "" : ((JValue)element["ShowName"]).Value.ToString();//Utils.emptyOr(((JValue)element["ShowName"]).Value.ToString(), "");
-            //        group["OwnerUin"] = ((JValue)element["OwnerUin"]) == null ? "" : ((JValue)element["OwnerUin"]).Value.ToString(); //Utils.emptyOr(((JValue)element["OwnerUin"]).Value.ToString(), "");
-            //        group["MemberCount"] = ((JValue)element["MemberCount"]) == null ? "0" : ((JValue)element["MemberCount"]).Value.ToString();//Utils.emptyOr(((JValue)element["MemberCount"]).Value.ToString(), "0");
-            //        break;
-            //    }
+            //    GetGroupInfoByUserName(new List<string> { groupId });
+            //    return getGroupById(groupId);
             //}
-            //return group;
+            return group;
         }
-        /**
-         * 根据用户id和群id查询用户信息
-         *
-         * @param userId
-         * @param groupId
-         * @return
-         */
+
+        /// <summary>
+        /// 根据用户id和群id查询用户信息
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <param name="groupId"></param>
+        /// <returns></returns>
         public async Task<Contact> getGroupUserById(String userId, String groupId)
         {
             String unknownPeople = Const.LOG_MSG_UNKNOWN_NAME + userId;
@@ -1057,62 +1058,31 @@ namespace weixin_uwp
             user.Name = "";
             // 群聊显示名称
             user.DisplayName = "";
-            // Log显示用的
-            //user.Add("ShowName", unknownPeople);
             // 群用户id
             user.AttrStatus = unknownPeople;
 
             // 群友
-            if (groupMemeberList.ContainsKey(groupId) == false) //没找到群
+            if (groupList.ContainsKey(groupId) == false) //没找到群
             {
-                if (user.HeadImage == null)
-                {
-                    //user.HeadImage = await user.GetHeadImage();
-                }
                 return user;
             }
 
-            Dictionary<String, Contact> memebers = groupMemeberList[groupId];
-            if (memebers.ContainsKey(userId) == false) //没找到成员
+            Dictionary<String, Contact> memebers = groupList[groupId].Members;
+            if (memebers != null && memebers.ContainsKey(userId) == false) //没找到成员
             {
-                if (user.HeadImage == null)
-                {
-                    //user.HeadImage = await user.GetHeadImage();
-                }
                 return user;
             }
             else
             {
-                if (memebers[userId].HeadImage == null)
-                {
-                    //memebers[userId].HeadImage = await memebers[userId].GetHeadImage();
-                }
                 return memebers[userId];
             }
-
-
-            //foreach (JObject element in memebers)
-            //{
-            //    //JsonObject member = element.getAsJsonObject();
-            //    if (((JValue)element["UserName"]).Value.ToString() == userId)
-            //    {
-            //        String nickName = ((JValue)element["NickName"]) == null ? "" : ((JValue)element["NickName"]).Value.ToString(); //Utils.emptyOr(((JValue)element["NickName"]).Value.ToString(), "");
-            //        String displayName = ((JValue)element["DisplayName"]) == null ? "" : ((JValue)element["DisplayName"]).Value.ToString(); //Utils.emptyOr(((JValue)element["DisplayName"]).Value.ToString(), "");
-            //        user["NickName"] = nickName;
-            //        user["DisplayName"] = displayName;
-            //        user["AttrStatus"] = ((JValue)element["AttrStatus"]) == null ? "" : ((JValue)element["AttrStatus"]).Value.ToString(); //Utils.emptyOr(((JValue)element["AttrStatus"]).Value.ToString(), "");
-            //        user["ShowName"] = string.IsNullOrEmpty(displayName) ? nickName : displayName;
-            //        break;
-            //    }
-            //}
-            //return user;
         }
-        /**
-         * 根据用户id查询用户信息
-         *
-         * @param userId
-         * @return
-         */
+
+        /// <summary>
+        /// 根据用户id查询用户信息
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
         public async Task<Contact> getUserById(String userId)
         {
             String unknownPeople = Const.LOG_MSG_UNKNOWN_NAME + userId;
@@ -1124,13 +1094,9 @@ namespace weixin_uwp
             // 群聊显示名称
             user.DisplayName = "";
 
-            if (userId == this.loginUser.UserName)
+            if (userId == this.loginUser.UserName) //是否是当前用户
             {
                 user.Name = this.loginUser.Name;
-                if (user.HeadImage == null)
-                {
-                    //user.HeadImage = await user.GetHeadImage();
-                }
             }
             else
             {
@@ -1140,29 +1106,21 @@ namespace weixin_uwp
                     if (element.UserName == userId)
                     {
                         user.Name = element.Name;
-                        if (user.HeadImage == null)
-                        {
-                            //user.HeadImage = await user.GetHeadImage();
-                        }
                         return user;
                         break;
                     }
                 }
-                // 特殊账号
-                foreach (ObjectBase element in specialUsersList)
-                {
-                    //JsonObject item = element.getAsJsonObject();
-                    if (element.UserName == userId)
-                    {
-                        user.Name = element.Name;
-                        if (user.HeadImage == null)
-                        {
-                            //user.HeadImage = await user.GetHeadImage();
-                        }
-                        return user;
-                        break;
-                    }
-                }
+                //// 特殊账号
+                //foreach (ObjectBase element in specialUsersList)
+                //{
+                //    //JsonObject item = element.getAsJsonObject();
+                //    if (element.UserName == userId)
+                //    {
+                //        user.Name = element.Name;
+                //        return user;
+                //        break;
+                //    }
+                //}
             }
             return user;
         }
