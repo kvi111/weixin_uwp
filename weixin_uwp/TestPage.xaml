@@ -8,6 +8,6 @@
     mc:Ignorable="d" Loaded="Page_Loaded">
 
     <Grid Background="AliceBlue">
-        <local:WeiXinTextInput x:Name="textInput1" Background="White" />
+        <TextBlock Name="textInput1"/>
     </Grid>
 </Page>

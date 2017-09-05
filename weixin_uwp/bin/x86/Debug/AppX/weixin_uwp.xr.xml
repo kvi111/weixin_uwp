@@ -222,9 +222,7 @@
       <RootEvent Name="Click" />
       <RootEvent Name="GotFocus" />
     </RootType>
-    <RootType FullName="weixin_uwp.Controls.WeiXinTextInput">
-      <RootProperty Name="Background" />
-    </RootType>
+    <RootType FullName="weixin_uwp.Controls.WeiXinTextInput" />
     <RootType FullName="Windows.UI.Xaml.Controls.Page">
       <RootProperty Name="Content" />
       <RootEvent Name="Loaded" />

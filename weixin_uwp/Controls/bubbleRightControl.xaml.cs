@@ -79,7 +79,11 @@ namespace weixin_uwp.Controls
         {
             set
             {
-                if (string.IsNullOrEmpty(value)) return;
+                if (string.IsNullOrEmpty(value))
+                {
+                    this.textBlock1.Text = "";
+                    return;
+                }
 
                 this.textBlock1.Text = Utils.SetEmoji(value);
 

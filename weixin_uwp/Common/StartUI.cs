@@ -146,6 +146,7 @@ namespace weixin_uwp
             {
                 try
                 {
+                    await Task.Delay(2000);//暂停2秒
                     WriteLog("listen synccheck ...");
                     //retcode, selector
                     int[] checkResponse = await synccheck();
@@ -368,7 +369,7 @@ namespace weixin_uwp
             {
                 //如果群里面，自己发的消息，则ToUserName是群的UserName；别人发的FromUserName是群的UserName;
                 String groupId = userMessage.From.UserName.StartsWith("@@") ? userMessage.From.UserName : userMessage.To.UserName;
-                group = this.getGroupById(groupId);
+                group = await this.getGroupById(groupId);
                 if (content.Contains(":<br/>"))//群里面其他人发的消息
                 {
                     String u_id = content.Split(new string[] { ":<br/>" }, StringSplitOptions.None)[0];
@@ -498,7 +499,7 @@ namespace weixin_uwp
                 //接收到来自群的消息
                 String g_id = groupMessage.FromUserName;
                 groupMessage.setGroupId(g_id);
-                group = this.getGroupById(g_id);
+                group = await this.getGroupById(g_id);
                 if (content.Contains(":<br/>"))
                 {
                     String u_id = content.Split(new string[] { ":<br/>" }, StringSplitOptions.None)[0];
@@ -512,7 +513,7 @@ namespace weixin_uwp
                 groupMessage.setGroupId(g_id);
                 String u_id = groupMessage.FromUserName;
                 src = await this.getGroupUserById(u_id, g_id);
-                group = this.getGroupById(g_id);
+                group = await this.getGroupById(g_id);
             }
 
             if (null != src)

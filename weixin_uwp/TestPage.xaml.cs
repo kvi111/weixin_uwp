@@ -21,7 +21,8 @@ namespace weixin_uwp
 
         private void Page_Loaded(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
-            
+            string str = "尔塞飞[呲牙]而啊手动阀<span class=\"emoji emoji1f639\"></span>啊手动阀";
+            textInput1.Text = Utils.SetEmoji(str);
         }
     }
 }

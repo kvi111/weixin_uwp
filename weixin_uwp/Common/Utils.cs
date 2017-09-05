@@ -30,7 +30,7 @@ namespace weixin_uwp
             Dictionary<String, Object> map = new Dictionary<String, Object>(values.Length / 2);
             for (int i = 0; i < values.Length; i++)
             {
-                map.Add(values[i].ToString(), values[i+1]);
+                map.Add(values[i].ToString(), values[i + 1]);
                 ++i;
             }
             return map;
@@ -233,7 +233,7 @@ namespace weixin_uwp
             }
             catch
             {
-             
+
             }
             return ret;
         }
@@ -266,7 +266,7 @@ namespace weixin_uwp
                 string[] arr = str.Split('=');
                 if (arr.Length == 2)
                 {
-                    kvp.Add(new KeyValuePair<string, string>(arr[0],arr[1]));
+                    kvp.Add(new KeyValuePair<string, string>(arr[0], arr[1]));
                 }
             }
             return kvp;
@@ -356,7 +356,7 @@ namespace weixin_uwp
                 await bmp.SetSourceAsync(mStream.AsRandomAccessStream());
                 return bmp;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 bmp = null;
             }
@@ -491,17 +491,29 @@ namespace weixin_uwp
             }
         }
 
+        /// <summary>
+        /// 处理表情消息
+        /// </summary>
+        /// <param name="strEmoji"></param>
+        /// <returns></returns>
         public static string SetEmoji(string strEmoji)
         {
             //strEmoji = "asdf[呲牙]asdf";
             string tempStr = "";
-            string[] arrStr = strEmoji.Split(new string[] { "[", "]" }, StringSplitOptions.RemoveEmptyEntries);
+            string[] arrStr = strEmoji.Split(new string[] { "[", "]", "\"></span>", "<span class=\"" }, StringSplitOptions.RemoveEmptyEntries);
             foreach (string str in arrStr)
             {
-                string str1 = "[" + str + "]";
-                if (Const.dictEmoji.ContainsKey(str1))
+                string str1 = str.Trim();
+                if (string.IsNullOrEmpty(str1)) continue;
+
+                if (Const.dictEmoji.ContainsKey("[" + str1 + "]"))
                 {
-                    tempStr += Utils.EmojiCodeToUTF16String(Const.dictEmoji[str1]);
+                    tempStr += Utils.EmojiCodeToUTF16String(Const.dictEmoji["[" + str1 + "]"]);
+                }
+                else if (str1.StartsWith("emoji emoji")) //表情
+                {
+                    //使用emoji字符集来显示
+                    tempStr += Utils.EmojiCodeToUTF16String(str1.Replace("emoji emoji", ""));
                 }
                 else
                 {

@@ -91,22 +91,7 @@ namespace weixin_uwp.Controls
             if (string.IsNullOrEmpty(strEmoji)) return;
 
             //string emojiStr = "<span class=\"emoji emoji1f49d\"></span>图强一年级4班交流群<span class=\"emoji emoji1f33b\"></span>";
-            string[] arrStr = strEmoji.Split(new string[] { "\"></span>", "<span class=\"" }, StringSplitOptions.RemoveEmptyEntries);
-            foreach (string str in arrStr)
-            {
-                string str1 = str.Trim();
-                if (string.IsNullOrEmpty(str1)) continue;
-
-                if (str1.StartsWith("emoji emoji")) //表情
-                {
-                    //使用emoji字符集来显示
-                    tb.Text += Utils.EmojiCodeToUTF16String(str1.Replace("emoji emoji", ""));
-                }
-                else  //文字
-                {
-                    tb.Text += str1;
-                }
-            }
+            tb.Text = Utils.SetEmoji(strEmoji);
         }
     }
 }

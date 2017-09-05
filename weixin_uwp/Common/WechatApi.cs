@@ -602,7 +602,7 @@ namespace weixin_uwp
         {
             String url = conf["API_webwxlogout"] + "?redirect=1&type=1";
 
-            JObject response = await doPost(url,null);
+            JObject response = await doPost(url, null);
             return true;
         }
 
@@ -940,7 +940,7 @@ namespace weixin_uwp
         /// <returns></returns>
         private async Task<byte[]> GetContactHeadImg(String userName)
         {
-            String url = conf["API_webwxgeticon"] + "?username={0}&skey={1}";  //seq=637275253&
+            String url = conf["API_webwxgeticon"] + "?seq=0&username={0}&skey={1}";  //seq=637275253&
             url = String.Format(url, userName, session.getSkey());
 
             return await doPost(url);
@@ -953,8 +953,8 @@ namespace weixin_uwp
         /// <returns></returns>
         private async Task<byte[]> GetGroupHeadImg(String userName)
         {
-            String url = conf["API_webwxgetheadimg"] + "?username={0}";  //&skey={1}
-            url = String.Format(url, userName); //, session.getSkey()
+            String url = conf["API_webwxgetheadimg"] + "?username={0}&skey={1}";  //&skey={1}
+            url = String.Format(url, userName, session.getSkey()); //, session.getSkey()
 
             return await doPost(url);
         }
@@ -973,6 +973,7 @@ namespace weixin_uwp
             }
             return response;
         }
+
         /// <summary>
         /// 聊天中的消息图片
         /// </summary>
@@ -1023,22 +1024,25 @@ namespace weixin_uwp
         /// </summary>
         /// <param name="groupId"></param>
         /// <returns></returns>
-        public Group getGroupById(String groupId)
+        public async Task<Group> getGroupById(String groupId)
         {
             String unknownGroup = Const.LOG_MSG_UNKNOWN_GROUP_NAME + groupId;
             Group group = new Group();
             group.UserName = groupId;
-            group.Name = "";
+            group.Name = "未知Group";
 
             if (groupList.ContainsKey(groupId))
             {
                 return groupList[groupId];
             }
-            //else
-            //{
-            //    GetGroupInfoByUserName(new List<string> { groupId });
-            //    return getGroupById(groupId);
-            //}
+            else
+            {
+                await GetGroupInfoByUserName(new List<string> { groupId });
+                if (groupList.ContainsKey(groupId))
+                {
+                    return groupList[groupId];
+                }
+            }
             return group;
         }
 
@@ -1055,7 +1059,7 @@ namespace weixin_uwp
             // 微信动态ID
             user.UserName = userId;
             // 微信昵称
-            user.Name = "";
+            user.Name = "未知Contact";
             // 群聊显示名称
             user.DisplayName = "";
             // 群用户id
@@ -1064,7 +1068,11 @@ namespace weixin_uwp
             // 群友
             if (groupList.ContainsKey(groupId) == false) //没找到群
             {
-                return user;
+                await GetGroupInfoByUserName(new List<string> { groupId });
+                if (groupList.ContainsKey(groupId) == false)
+                {
+                    return user;
+                }
             }
 
             Dictionary<String, Contact> memebers = groupList[groupId].Members;
