@@ -1,0 +1,12 @@
+App.xbf
+Controls\bubbleLeftControl.xbf
+Controls\bubbleRightControl.xbf
+Controls\ChatListControl.xbf
+Controls\ContactList.xbf
+Controls\EmojiControl.xbf
+Controls\TimerTextControl.xbf
+Controls\WeiXinTextInput.xbf
+LoginPage.xbf
+MainPage.xbf
+TestPage.xbf
+Themes\Generic.xbf

@@ -1,0 +1,13 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="using:weixin_uwp.Controls"
+    x:Class="weixin_uwp.TestPage"
+    mc:Ignorable="d" Loaded="Page_Loaded">
+
+    <Grid Background="AliceBlue">
+        <local:WeiXinTextInput x:Name="textInput1" Background="White" />
+    </Grid>
+</Page>

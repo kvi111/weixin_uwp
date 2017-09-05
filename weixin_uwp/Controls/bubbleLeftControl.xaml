@@ -1,0 +1,23 @@
+﻿<UserControl
+    x:Class="weixin_uwp.Controls.bubbleLeftControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Height="40"
+    Width="40"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+
+    <Grid>
+        <Rectangle Name="rect1" Grid.Column="0" Grid.Row="0" RadiusX="4" RadiusY="4" Fill="#ffffff" Stroke="#e3e3e3" StrokeThickness="1" Margin="6,0,0,0"/>
+        <Polygon Name="poly1" Points="0,21 6.50,15 6.50,27" Fill="#ffffff" Stroke="#e3e3e3" StrokeThickness="1"/>
+        <Line Name="line1" X1="6.50" Y1="16" X2="6.50" Y2="26" Stroke="White" StrokeThickness="1.3" Fill="Red">
+            <!--<Line.Clip>
+                <RectangleGeometry Rect=""/>
+            </Line.Clip>-->
+        </Line>
+        <TextBlock Name="textBlock1" VerticalAlignment="Center" Margin="21,3,15,3" IsTextSelectionEnabled="True"/>
+    </Grid>
+</UserControl>

@@ -1,0 +1,20 @@
+﻿<UserControl
+    x:Class="weixin_uwp.Controls.bubbleRightControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:weixin_uwp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Height="40"
+    Width="40"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+
+    <Grid>
+        <Rectangle x:ConnectionId='1' Name="rect1" RadiusX="4" RadiusY="4" Fill="#9eeb6b" StrokeThickness="0" Margin="0,0,6,0"/>
+        <Polygon x:ConnectionId='2' x:Name="poly1" Points="40,21 34,15 34,27" Fill="#9eeb6b"/>
+        <TextBlock x:ConnectionId='3' Name="textBlock1" VerticalAlignment="Center" Margin="15,3,21,3" IsTextSelectionEnabled="True"/>
+    </Grid>
+</UserControl>
+

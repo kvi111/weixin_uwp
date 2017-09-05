@@ -1,0 +1,15 @@
+﻿<UserControl
+    x:Class="weixin_uwp.Controls.TimerTextControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+
+    <Grid>
+        <Rectangle Name="rect1" RadiusX="4" RadiusY="4" Fill="#e4e4e4" Height="27" StrokeThickness="0"/>
+        <TextBlock Name="textBlock1"  Foreground="White" Text="sss" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    </Grid>
+</UserControl>

@@ -1,0 +1,52 @@
+﻿<Page x:ConnectionId='1'
+    x:Class="weixin_uwp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="using:weixin_uwp.Controls"
+    mc:Ignorable="d"                     >
+
+    <Grid Background="#f7f7f7">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="70"></ColumnDefinition>
+            <ColumnDefinition Width="312"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="300"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Width="70" Height="2000" Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#3e3e40" >
+
+            <Button x:ConnectionId='9' Name="btnUser" Width="40" Height="40"                       Margin="15,15,0,0" Background="{x:Null}">
+                <Image x:ConnectionId='14' Name="btnUserImage" Width="40" Height="40" Margin="-10,-6"/>
+            </Button>
+            <Button x:ConnectionId='10' Name="btnSessionList" Width="30" Height="30" Margin="20,40,0,0" Foreground="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}"                                                                >
+                <Image x:ConnectionId='13' Name="btnSessionListImage" Width="30" Height="30" Source="Assets/img/TabBar_Chat_Btn_Click.scale-200.png" Margin="-10,-6"/>
+            </Button>
+            <Button x:ConnectionId='11' Name="btnContactList" Width="30" Height="30" Margin="20,40,0,0" Background="{x:Null}"                                                                >
+                <Image x:ConnectionId='12' Name="btnContactListImage" Width="30" Height="30" Source="Assets/img/TabBar_Contacts_Btn_Hover.scale-200.png" Margin="-10,-6"/>
+            </Button>
+        </StackPanel>
+
+        <TextBox Grid.Row="0" Grid.Column="1" Width="230" Height="20" Text="QQQQQQQQ" Background="#f7f7f7" BorderThickness="0.4" HorizontalAlignment="Center" VerticalAlignment="Center" Canvas.ZIndex="1"></TextBox>
+        <Grid Grid.Row="0" Grid.Column="1" Background="#ececec"></Grid>
+
+        <local:ContactList x:ConnectionId='2' x:Name="sessionList1" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Background="#ececec"                                                 />
+        <local:ContactList x:ConnectionId='3' x:Name="contactList1" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Background="#ececec"                                                 />
+
+        <local:EmojiTextControl x:ConnectionId='4' x:Name="textBlockNickName" Grid.Row="0" Grid.Column="2" Margin="15,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="20"/>
+        <StackPanel x:ConnectionId='5' Name="sp1" Grid.Row="0" Grid.Column="2" BorderBrush="#ececec" BorderThickness="0.5" Height="0.5" VerticalAlignment="Bottom"/>
+        <local:ChatListControl x:ConnectionId='6' x:Name="chatlist1" Grid.Row="1" Grid.Column="2"/>
+        <!--Background="#f5f5f5"-->
+
+        <local:WeiXinTextInput x:ConnectionId='7' x:Name="textBoxInput" Grid.Row="2" Grid.Column="2"/>
+
+        <Grid x:ConnectionId='8' Name="spWelcome" Grid.Row="0" Grid.Column="2" Grid.RowSpan="3" Background="#f5f5f5" Canvas.ZIndex="30">
+            <Image Height="100" Width="100" Source="ms-appx:///Assets/logo-200.png"/>
+        </Grid>
+    </Grid>
+</Page>
+

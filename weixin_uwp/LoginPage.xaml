@@ -1,0 +1,19 @@
+﻿<Page
+    x:Class="weixin_uwp.LoginPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:weixin_uwp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Loaded="Page_Loaded">
+
+    <Grid Background="#e4e4e4">
+        <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+            <Image Name="image0" VerticalAlignment="Center" HorizontalAlignment="Center" Height="50" Width="50" Margin="0,-50,0,0" Source="ms-appx:///Assets/logo-200.png"/>
+            <Image Name="image1" VerticalAlignment="Center" HorizontalAlignment="Center" Height="210" Width="210" Stretch="Fill" Margin="0,80,0,0"/>
+            <TextBlock Name="textTip" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26" Margin="0,60,0,0">扫描二维码登录</TextBlock>
+            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="Gray" FontSize="18" Margin="0,0,0,0">使用手机微信"扫一扫"登录 Windows 10 微信</TextBlock>
+        </StackPanel>
+
+    </Grid>
+</Page>

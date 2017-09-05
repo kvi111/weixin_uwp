@@ -1,0 +1,46 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:weixin_uwp.Controls">
+    <!--<Border
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}">
+                        #f45454
+                    </Border>-->
+    <Style TargetType="local:RoundControl" >
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:RoundControl">
+                    <Grid Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" BorderThickness="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition ></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition ></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Rectangle Grid.Column="0" Grid.Row="0" RadiusX="{TemplateBinding Radius}" RadiusY="{TemplateBinding Radius}" Fill="{TemplateBinding Background}" StrokeThickness="0" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}"/>
+                        <TextBlock Grid.Column="0" Grid.Row="0" FontSize="{TemplateBinding FontSize}" Foreground="{TemplateBinding Foreground}" Text="{TemplateBinding Text}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="local:EmojiTextControl" xmlns:local="using:weixin_uwp.Controls">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:EmojiTextControl">
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}">
+                        <!--<StackPanel Name="stackPanel1" Orientation="Horizontal" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}"/>-->
+                        <TextBlock Name="textBlock1" FontSize="{TemplateBinding FontSize}" Foreground="{TemplateBinding Foreground}" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" VerticalAlignment="Center" TextTrimming="WordEllipsis"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>
+
