@@ -10,6 +10,7 @@ using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 using System.Threading.Tasks;
 using Windows.Foundation;
+using Windows.UI.Core;
 
 // https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x804 上介绍了“空白页”项模板
 
@@ -142,11 +143,19 @@ namespace weixin_uwp
         {
             try
             {
-                string fromUserName = msg.isGroup ? msg.To.UserName : msg.From.UserName;
+                string sessionUserName = "";
+                if (msg.isGroup)
+                {
+                    sessionUserName = msg.To.UserName;
+                }
+                else
+                {
+                    sessionUserName = msg.From.UserName != startUI.loginUser.UserName ? msg.From.UserName : msg.To.UserName;
+                }
                 bool isFind = false;
                 for (int i = 0; i < ocSessionInfo.Count; i++)
                 {
-                    if (ocSessionInfo[i].FromObj.UserName == fromUserName)
+                    if (ocSessionInfo[i].FromObj.UserName == sessionUserName)
                     {
                         ocSessionInfo[i].subHeading = msg.isGroup ? msg.From.Name + ":" + msg.message : msg.message;
                         msg.From.HeadImage = msg.isGroup ? msg.From.HeadImage : ocSessionInfo[i].FromObj.HeadImage; //await Utils.ByteArrayToBitmapImage(ocSessionInfo[i].headImgBytes);
@@ -170,9 +179,9 @@ namespace weixin_uwp
                     //    startUI.getGroupById(fromUserName);
                     //}
                     Conversation conv = new Conversation();
-                    conv.FromObj = msg.isGroup ? msg.To : msg.From;
+                    conv.FromObj = sessionUserName != msg.From.UserName ? msg.To : msg.From;
                     await conv.FromObj.GetHeadImage();//确保头像出来
-                    conv.subHeading = msg.isGroup ? conv.FromObj.Name + ":" + msg.message : msg.message;
+                    conv.subHeading = msg.isGroup ? msg.From.Name + ":" + msg.message : msg.message;
                     conv.unReadMsgCount = 1;
                     ocSessionInfo.Insert(0, conv);
                 }
@@ -204,15 +213,24 @@ namespace weixin_uwp
         /// <param name="msg"></param>
         public void SaveChatMessage(ChatMessage msg)
         {
-            string fromUserName = msg.isGroup ? msg.To.UserName : msg.From.UserName;
-            //string key = msg.From.UserName;// msg.isMine ? msg.To.UserName : fromUserName;
-            if (dictChatList.ContainsKey(fromUserName))
+            //string fromUserName = msg.isGroup ? msg.To.UserName : msg.From.UserName;
+            string sessionUserName = "";
+            if (msg.isGroup)
             {
-                dictChatList[fromUserName].Add(msg);
+                sessionUserName = msg.To.UserName;
             }
             else
             {
-                dictChatList.Add(fromUserName, new List<ChatMessage>() { msg });
+                sessionUserName = msg.From.UserName != startUI.loginUser.UserName ? msg.From.UserName : msg.To.UserName;
+            }
+            //string key = msg.From.UserName;// msg.isMine ? msg.To.UserName : fromUserName;
+            if (dictChatList.ContainsKey(sessionUserName))
+            {
+                dictChatList[sessionUserName].Add(msg);
+            }
+            else
+            {
+                dictChatList.Add(sessionUserName, new List<ChatMessage>() { msg });
             }
         }
 

@@ -660,7 +660,9 @@ namespace weixin_uwp
                     {
                         string memberId = ((JValue)member["UserName"]).Value.ToString();
                         //mengberList.Add(memberId, new Contact() { Name = ((JValue)member["NickName"]).Value.ToString(), UserName = memberId, DisplayName = ((JValue)member["DisplayName"]).Value.ToString() });
-                        mengberList.Add(memberId, GetObjectBase(member).ToContact());
+                        Contact contact = GetObjectBase(member).ToContact();
+                        contact.EncryChatRoomId = groupNew.EncryChatRoomId;
+                        mengberList.Add(memberId, contact);
                     }
                     if (groupList.ContainsKey(groupId) == false)
                     {
@@ -863,7 +865,7 @@ namespace weixin_uwp
             objBase.HeadImgUrl = member["HeadImgUrl"] != null ? ((JValue)member["HeadImgUrl"]).Value.ToString() : "";
             objBase.RemarkName = member["RemarkName"] != null ? ((JValue)member["RemarkName"]).Value.ToString() : "";
             objBase.VerifyFlag = member["VerifyFlag"] != null ? ((JValue)member["VerifyFlag"]).Value.ToString() : "";
-            objBase.EntryChatRoomId = member["EntryChatRoomId"] != null ? ((JValue)member["EntryChatRoomId"]).Value.ToString() : "";
+            objBase.EncryChatRoomId = member["EncryChatRoomId"] != null ? ((JValue)member["EncryChatRoomId"]).Value.ToString() : "";
 
             return objBase;
         }

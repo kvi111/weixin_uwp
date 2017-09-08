@@ -79,7 +79,7 @@ namespace weixin_uwp.Common.model
         /// <summary>
         /// EntryChatRoomId 用户获取群内用户信息时使用，联系人用户则不用此参数
         /// </summary>
-        public string EntryChatRoomId { get; set; }
+        public string EncryChatRoomId { get; set; }
 
         public Contact ToContact()
         {
@@ -103,7 +103,7 @@ namespace weixin_uwp.Common.model
             group.HeadImgUrl = HeadImgUrl;
             group.RemarkName = RemarkName;
             group.VerifyFlag = VerifyFlag;
-            group.EntryChatRoomId = EntryChatRoomId;
+            group.EncryChatRoomId = EncryChatRoomId;
             return group;
         }
 
@@ -111,7 +111,8 @@ namespace weixin_uwp.Common.model
         {
             if (HeadImage != null) return HeadImage;
 
-            byte[] headImgBytes = await LoginPage.instance.startUI.GetHeadImg(UserName);
+
+            byte[] headImgBytes = string.IsNullOrEmpty(EncryChatRoomId) ? await LoginPage.instance.startUI.GetHeadImg(UserName) : await LoginPage.instance.startUI.GetHeadImg(UserName, EncryChatRoomId);
             HeadImage = await Utils.ByteArrayToBitmapImage(headImgBytes);
             return HeadImage;
         }

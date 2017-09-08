@@ -31,13 +31,13 @@
     <AppXManifest Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-09-08T04:34:40.898</Modified>
+      <Modified>2017-09-08T13:14:36.859</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\bin\x86\Debug\weixin_uwp.exe">
       <PackagePath>entrypoint\weixin_uwp.exe</PackagePath>
-      <Modified>2017-09-08T04:34:39.302</Modified>
+      <Modified>2017-09-08T13:14:36.010</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\lwf\.nuget\packages\Microsoft.CSharp\4.3.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -782,11 +782,11 @@
     <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-09-08T04:34:40.429</Modified>
+      <Modified>2017-09-08T13:14:36.603</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\bin\x86\Debug\Core\weixin_uwp.exe">
       <PackagePath>weixin_uwp.exe</PackagePath>
-      <Modified>2017-09-08T04:34:40.877</Modified>
+      <Modified>2017-09-08T13:14:36.848</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

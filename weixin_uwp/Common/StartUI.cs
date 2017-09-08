@@ -333,8 +333,8 @@ namespace weixin_uwp
 
                 await this.show_msg(userMessage);
 
-                Boolean isGroupMsg = (((JValue)element["FromUserName"]).Value.ToString() + ((JValue)element["ToUserName"]).Value.ToString()).Contains("@@");
-                if (isGroupMsg)
+                //Boolean isGroupMsg = (((JValue)element["FromUserName"]).Value.ToString() + ((JValue)element["ToUserName"]).Value.ToString()).Contains("@@");
+                if (userMessage.isGroup)
                 {
                     GroupMessage groupMessage = await make_group_msg(userMessage);
                     if (null != messageHandle)
