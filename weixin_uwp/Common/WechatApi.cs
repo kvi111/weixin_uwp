@@ -619,7 +619,7 @@ namespace weixin_uwp
         }
 
         /// <summary>
-        /// 获取多个微信群的信息，包括成员信息
+        /// 获取多个微信群的信息，包括成员信息；也可以用来获取用户的详细信息，如果要获取群里面非好友用户，则EntryChatRoomId不能为空
         /// </summary>
         /// <param name="groupUserNames">微信群的UserName集合</param>
         /// <returns></returns>
@@ -863,6 +863,8 @@ namespace weixin_uwp
             objBase.HeadImgUrl = member["HeadImgUrl"] != null ? ((JValue)member["HeadImgUrl"]).Value.ToString() : "";
             objBase.RemarkName = member["RemarkName"] != null ? ((JValue)member["RemarkName"]).Value.ToString() : "";
             objBase.VerifyFlag = member["VerifyFlag"] != null ? ((JValue)member["VerifyFlag"]).Value.ToString() : "";
+            objBase.EntryChatRoomId = member["EntryChatRoomId"] != null ? ((JValue)member["EntryChatRoomId"]).Value.ToString() : "";
+
             return objBase;
         }
 
@@ -917,7 +919,7 @@ namespace weixin_uwp
         /// </summary>
         /// <param name="userName">用户id</param>
         /// <returns></returns>
-        public async Task<byte[]> GetHeadImg(String userName)
+        public async Task<byte[]> GetHeadImg(String userName, String entryChatRoomId = "")
         {
             if (string.IsNullOrEmpty(userName) == false)
             {
@@ -927,21 +929,34 @@ namespace weixin_uwp
                 }
                 else  //联系人
                 {
-                    return await GetContactHeadImg(userName);
+                    if (string.IsNullOrEmpty(entryChatRoomId) == false)
+                        return await GetContactHeadImg(userName);
+                    else
+                        return await GetContactHeadImg(userName, entryChatRoomId);
                 }
             }
             return null;
         }
 
         /// <summary>
-        /// 获取联系人头像
+        /// 获取联系人或群内其他用户头像
         /// </summary>
         /// <param name="userName">用户id</param>
+        /// <param name="entryChatRoomId">用户所在群的EntryChatRoomId，如果是群用户且不是好友，省略此参数则获取不到头像；是好友可以省略此参数</param>
         /// <returns></returns>
-        private async Task<byte[]> GetContactHeadImg(String userName)
+        private async Task<byte[]> GetContactHeadImg(String userName, String entryChatRoomId = "")
         {
-            String url = conf["API_webwxgeticon"] + "?seq=0&username={0}&skey={1}";  //seq=637275253&
-            url = String.Format(url, userName, session.getSkey());
+            String url = conf["API_webwxgeticon"] + "?seq=0&username={0}&skey={1}&EntryChatRoomId={2}";  //seq=637275253&
+            url = String.Format(url, userName, session.getSkey(), entryChatRoomId);
+            //if (string.IsNullOrEmpty(entryChatRoomId))
+            //{ 
+            //    url = String.Format(url, userName, session.getSkey());
+            //}
+            //else
+            //{
+            //    url += "&EntryChatRoomId={2}";
+            //    url = String.Format(url, userName, session.getSkey(), entryChatRoomId);
+            //}
 
             return await doPost(url);
         }

@@ -76,6 +76,11 @@ namespace weixin_uwp.Common.model
         /// </summary>
         public string VerifyFlag { get; set; }
 
+        /// <summary>
+        /// EntryChatRoomId 用户获取群内用户信息时使用，联系人用户则不用此参数
+        /// </summary>
+        public string EntryChatRoomId { get; set; }
+
         public Contact ToContact()
         {
             Contact contact = new Contact();
@@ -98,7 +103,7 @@ namespace weixin_uwp.Common.model
             group.HeadImgUrl = HeadImgUrl;
             group.RemarkName = RemarkName;
             group.VerifyFlag = VerifyFlag;
-            
+            group.EntryChatRoomId = EntryChatRoomId;
             return group;
         }
 
