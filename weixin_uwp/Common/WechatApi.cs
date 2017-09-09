@@ -673,6 +673,7 @@ namespace weixin_uwp
                     {
                         groupList[groupId].Members = mengberList;
                     }
+                    groupList[groupId].EncryChatRoomId = groupNew.EncryChatRoomId;
                 }
                 return true;
             }

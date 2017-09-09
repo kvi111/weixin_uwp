@@ -545,4 +545,3 @@ D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\obj\x86\Debug\MultipleQualifiersP
 D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\obj\x86\Debug\resources.en-us.resfiles
 D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\obj\x86\Debug\resources.en-us.resfiles.intermediate
 D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\obj\x86\Debug\ProjectArchitectures.txt
-D:\VSProjects\weixin_uwp\weixin_uwp\weixin_uwp\obj\x86\Debug\weixin_uwp.csprojResolveAssemblyReference.cache

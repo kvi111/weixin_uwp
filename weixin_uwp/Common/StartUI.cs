@@ -52,14 +52,21 @@ namespace weixin_uwp
         /// <summary>
         /// 等待扫码二维码和等待登录
         /// </summary>
-        public async Task WaitForLogin()
+        public async Task<bool> WaitForLogin()
         {
+            DateTime startDt = DateTime.Now;
             await LoginPage.instance.SetTip("扫描二维码登录");
             while (true)
             {
                 WriteLog(Const.LOG_MSG_SCAN_QRCODE);
                 if (await waitforlogin(1) == false)
                 {
+                    TimeSpan ts = new TimeSpan();
+                    ts = DateTime.Now - startDt;
+                    if (ts.Seconds > 280) //300秒二维码过期，提前到280秒判断
+                    {
+                        return false;
+                    }
                     continue;
                 }
                 break;
@@ -74,6 +81,7 @@ namespace weixin_uwp
                 }
                 break;
             }
+            return true;
         }
 
         /**
@@ -85,7 +93,7 @@ namespace weixin_uwp
 
             if (await GetUUID() == false) //获取uuid
             {
-                await LoginPage.instance.SetTip("获取uuid失败",true);
+                await LoginPage.instance.SetTip("获取uuid失败", true);
                 return;
             }
 
@@ -95,7 +103,12 @@ namespace weixin_uwp
                 return;
             }
 
-            await WaitForLogin();//等待用户扫描、确定
+            if (await WaitForLogin() == false) //等待用户扫描、确定
+            {
+                await LoginPage.instance.SetTip("二维码超时", true);
+                await start();//超时后，重新开始
+                return;
+            }
 
             await LoginPage.instance.SetTip("正在登录......");
 

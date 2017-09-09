@@ -135,35 +135,55 @@ namespace weixin_uwp
 
         #region Message
         /// <summary>
-        /// 在会话列表设置聊天新消息和未读消息数量
+        /// 用于提醒和保存新消息
         /// </summary>
         /// <param name="msg"></param>
+        /// <returns></returns>
+        public async Task AddMessage(ChatMessage msg)
+        {
+            //string fromUserName = msg.isGroup ? msg.To.UserName : msg.From.UserName;
+            ObjectBase sessionUserName; //用于显示在列表中的会话对象(可能是组或用户)的userName,也用于保存会话内容
+            if (msg.isGroup)
+            {
+                sessionUserName = msg.To;
+            }
+            else
+            {
+                sessionUserName = msg.From.UserName != startUI.loginUser.UserName ? msg.From : msg.To;
+            }
+            if (isCurr(sessionUserName.UserName)) //发来消息是否来自于当前聊天窗口用户
+            {
+                await chatlist1.Append(msg);
+                await SetNewMessageNumber(sessionUserName, msg, false);
+            }
+            else
+            {
+                await SetNewMessageNumber(sessionUserName, msg, true);
+            }
+            SaveChatMessage(sessionUserName, msg);
+        }
+
+        /// <summary>
+        /// 在会话列表设置聊天新消息和未读消息数量
+        /// </summary>
+        /// <param name="sessionUserName">会话对象，可能为组或者用户</param>
+        /// <param name="msg"></param>
         /// <param name="isSetUnReadNumber">是否设置未读消息数量（当前会话对象不需要设置）</param>
-        public async Task SetNewMessageNumber(ChatMessage msg, bool isSetUnReadNumber)
+        public async Task SetNewMessageNumber(ObjectBase sessionUserName, ChatMessage msg, bool isSetUnReadNumber)
         {
             try
             {
-                string sessionUserName = "";
-                if (msg.isGroup)
-                {
-                    sessionUserName = msg.To.UserName;
-                }
-                else
-                {
-                    sessionUserName = msg.From.UserName != startUI.loginUser.UserName ? msg.From.UserName : msg.To.UserName;
-                }
                 bool isFind = false;
                 for (int i = 0; i < ocSessionInfo.Count; i++)
                 {
-                    if (ocSessionInfo[i].FromObj.UserName == sessionUserName)
+                    if (ocSessionInfo[i].FromObj.UserName == sessionUserName.UserName)
                     {
                         ocSessionInfo[i].subHeading = msg.isGroup ? msg.From.Name + ":" + msg.message : msg.message;
-                        msg.From.HeadImage = msg.isGroup ? msg.From.HeadImage : ocSessionInfo[i].FromObj.HeadImage; //await Utils.ByteArrayToBitmapImage(ocSessionInfo[i].headImgBytes);
                         if (isSetUnReadNumber)
                         {
                             ocSessionInfo[i].unReadMsgCount += 1;
                         }
-                        ocSessionInfo.Move(i, 0);
+                        ocSessionInfo.Move(i, 0);//显示更新，即使位置不发送变化也需要
                         //sessionList1.Items.VectorChanged += Items_VectorChanged;
                         //sessionList1.UpdateLayout();
                         //sessionList1.Measure(new Size(double.PositiveInfinity, double.PositiveInfinity));
@@ -174,12 +194,8 @@ namespace weixin_uwp
 
                 if (isFind == false) //如果会话列表没有找到，就去联系人列表去找
                 {
-                    //if (msg.isGroup)
-                    //{
-                    //    startUI.getGroupById(fromUserName);
-                    //}
                     Conversation conv = new Conversation();
-                    conv.FromObj = sessionUserName != msg.From.UserName ? msg.To : msg.From;
+                    conv.FromObj = sessionUserName;
                     await conv.FromObj.GetHeadImage();//确保头像出来
                     conv.subHeading = msg.isGroup ? msg.From.Name + ":" + msg.message : msg.message;
                     conv.unReadMsgCount = 1;
@@ -192,45 +208,20 @@ namespace weixin_uwp
             }
         }
 
-        public async Task AddMessage(ChatMessage msg)
-        {
-            string fromUserName = msg.isGroup ? msg.To.UserName : msg.From.UserName;
-            if (isCurr(fromUserName)) //发来消息是否来自于当前聊天窗口用户
-            {
-                await chatlist1.Append(msg);
-                await SetNewMessageNumber(msg, false);
-            }
-            else
-            {
-                await SetNewMessageNumber(msg, true);
-            }
-            SaveChatMessage(msg);
-        }
-
         /// <summary>
         /// 保存聊天记录
         /// </summary>
+        /// <param name="sessionUserName">会话对象，可能为组或者用户</param>
         /// <param name="msg"></param>
-        public void SaveChatMessage(ChatMessage msg)
+        public void SaveChatMessage(ObjectBase sessionUserName, ChatMessage msg)
         {
-            //string fromUserName = msg.isGroup ? msg.To.UserName : msg.From.UserName;
-            string sessionUserName = "";
-            if (msg.isGroup)
+            if (dictChatList.ContainsKey(sessionUserName.UserName))
             {
-                sessionUserName = msg.To.UserName;
+                dictChatList[sessionUserName.UserName].Add(msg);
             }
             else
             {
-                sessionUserName = msg.From.UserName != startUI.loginUser.UserName ? msg.From.UserName : msg.To.UserName;
-            }
-            //string key = msg.From.UserName;// msg.isMine ? msg.To.UserName : fromUserName;
-            if (dictChatList.ContainsKey(sessionUserName))
-            {
-                dictChatList[sessionUserName].Add(msg);
-            }
-            else
-            {
-                dictChatList.Add(sessionUserName, new List<ChatMessage>() { msg });
+                dictChatList.Add(sessionUserName.UserName, new List<ChatMessage>() { msg });
             }
         }
 
@@ -339,14 +330,11 @@ namespace weixin_uwp
             chatMsg.isMine = true;
             chatMsg.message = textBoxInput.Text;
             chatMsg.From = LoginPage.instance.startUI.loginUser;
-            chatMsg.To = selectObjectBase;
-            //chatMsg.To.HeadImage = dictUserInfo[chatMsg.To.UserName].FromObj.HeadImage;
+            chatMsg.To = selectObjectBase.ToContact();
             chatMsg.messageType = EnumMsgType.MSGTYPE_TEXT;
-            chatlist1.Append(chatMsg);
-            //chatListBox1.Items.Add(new CCWin.SkinControl.ChatListItem() {  Text = textBoxInput.Text });
             textBoxInput.Text = "";
 
-            SaveChatMessage(chatMsg);
+            AddMessage(chatMsg);
         }
 
         private void btnUser_Click(object sender, RoutedEventArgs e)
