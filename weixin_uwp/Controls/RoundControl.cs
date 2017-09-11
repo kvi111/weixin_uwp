@@ -1,34 +1,29 @@
 ﻿using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Shapes;
+using Windows.Foundation;
 
 // The Templated Control item template is documented at https://go.microsoft.com/fwlink/?LinkId=234235
 
 namespace weixin_uwp.Controls
 {
+    [TemplatePart(Name = "textBlock11", Type = typeof(TextBlock))]
+    //[TemplatePart(Name = "rectangle1", Type = typeof(Rectangle))]
     public sealed class RoundControl : Windows.UI.Xaml.Controls.Control
     {
+
         public RoundControl()
         {
             this.DefaultStyleKey = typeof(RoundControl);
 
-            //this.Loaded += RoundControl_Loaded;
-            this.Loading += RoundControl_Loading;
-            //this.DataContextChanged += RoundControl_DataContextChanged;
+            this.Loaded += RoundControl_Loaded;
         }
 
-        //private void RoundControl_DataContextChanged(FrameworkElement sender, DataContextChangedEventArgs args)
-        //{
-        //    //throw new NotImplementedException();
-        //}
-
-        private void RoundControl_Loading(FrameworkElement sender, object args)
+        private void RoundControl_Loaded(object sender, RoutedEventArgs e)
         {
-            this.Height = 18; //固定高度
-            this.FontSize = 12; //固定字号
-
-            //this.Radius = this.Height / 2;
-            SetValue(RadiusProperty, this.Height / 2);
+            this.FontSize = 15; //固定字号
 
             if (this.Background == null)
             {
@@ -47,7 +42,9 @@ namespace weixin_uwp.Controls
 
             if (double.IsNaN(this.Width) || this.Width == 0)
             {
-                this.Width = GetWidth(Text);
+                this.Width = GetSize(Text).Width;
+                this.Height = GetSize(Text).Height;
+                SetValue(RadiusProperty, this.Height / 2);
             }
             if (Text == "0" || string.IsNullOrEmpty(Text))
             {
@@ -60,19 +57,31 @@ namespace weixin_uwp.Controls
         }
 
         /// <summary>
-        /// 根据文字得到控件的宽度
+        /// 根据文字得到控件的宽度和高度
         /// </summary>
         /// <param name="txtValue"></param>
         /// <returns></returns>
-        private double GetWidth(string txtValue)
+        private Size GetSize(string txtValue)
         {
+            TextBlock tb = new TextBlock();
             if (string.IsNullOrEmpty(txtValue))
             {
                 txtValue = "0";
             }
-            double dbValueLen = (txtValue == "0" ? 0 : txtValue.ToString().Length);
-            double dbWidth = this.Height + (dbValueLen <= 1 ? 0 : (dbValueLen - 1) * 6);
-            return dbWidth;
+            tb.Text = txtValue;
+            tb.Measure(new Size(double.PositiveInfinity, double.PositiveInfinity));//可以得到tb.ActualWidth，tb.ActualHeight为文本的实际宽高
+
+            double perLen = tb.ActualWidth / tb.Text.Length; //每个字符的宽度
+            double actualWidth = tb.ActualHeight;
+            if (tb.Text.Length > 1)
+            {
+                actualWidth = tb.ActualHeight + (tb.Text.Length - 1) * perLen;
+            }
+            if (actualWidth < tb.ActualHeight)
+            {
+                actualWidth = tb.ActualHeight;
+            }
+            return new Size(actualWidth, tb.ActualHeight);
         }
 
         public static readonly DependencyProperty TextProperty = DependencyProperty.Register("Text", typeof(string), typeof(RoundControl), new PropertyMetadata(default(string)));
@@ -83,8 +92,11 @@ namespace weixin_uwp.Controls
             {
                 SetValue(TextProperty, value);
 
-                double intWidth = GetWidth(value);
-                SetValue(WidthProperty, intWidth);
+                Size size = GetSize(value);
+
+                this.Height = size.Height;
+                SetValue(RadiusProperty, size.Height / 2);
+                SetValue(WidthProperty, size.Width);
             }
             get
             {

@@ -13,14 +13,8 @@
             <Setter.Value>
                 <ControlTemplate TargetType="local:RoundControl">
                     <Grid Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" BorderThickness="0">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition ></ColumnDefinition>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition ></RowDefinition>
-                        </Grid.RowDefinitions>
-                        <Rectangle Grid.Column="0" Grid.Row="0" RadiusX="{TemplateBinding Radius}" RadiusY="{TemplateBinding Radius}" Fill="{TemplateBinding Background}" StrokeThickness="0" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}"/>
-                        <TextBlock Grid.Column="0" Grid.Row="0" FontSize="{TemplateBinding FontSize}" Foreground="{TemplateBinding Foreground}" Text="{TemplateBinding Text}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <Rectangle Name="rectangle1" RadiusX="{TemplateBinding Radius}" RadiusY="{TemplateBinding Radius}" Fill="{TemplateBinding Background}" StrokeThickness="0" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}"/>
+                        <TextBlock Name="textBlock11" Margin="0,-1,0,0" FontSize="{TemplateBinding FontSize}" Foreground="{TemplateBinding Foreground}" Text="{TemplateBinding Text}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>

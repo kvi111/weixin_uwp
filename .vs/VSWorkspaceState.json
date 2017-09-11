@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\weixin_uwp"
+    "\\weixin_uwp",
+    "\\weixin_uwp\\Controls",
+    "\\weixin_uwp\\Themes"
   ],
-  "SelectedNode": "\\weixin_uwp\\Themes",
+  "SelectedNode": "\\weixin_uwp\\Controls\\RoundControl.cs",
   "PreviewInSolutionExplorer": false
 }

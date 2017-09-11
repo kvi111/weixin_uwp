@@ -8,7 +8,7 @@
     mc:Ignorable="d"                     >
 
     <Grid Background="AliceBlue">
-        <TextBlock x:ConnectionId='2' Name="textInput1"/>
+        <local:RoundControl Name="round1" Text="98998979" />
     </Grid>
 </Page>
 

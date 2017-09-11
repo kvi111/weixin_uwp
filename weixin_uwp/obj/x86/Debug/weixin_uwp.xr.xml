@@ -174,6 +174,7 @@
       <RootProperty Name="Foreground" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Margin" />
+      <RootProperty Name="Name" />
     </RootType>
     <RootType FullName="weixin_uwp.Controls.EmojiTextControl">
       <RootProperty Name="Height" />
